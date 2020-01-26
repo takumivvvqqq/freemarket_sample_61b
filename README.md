@@ -33,7 +33,7 @@
 - belongs_to :user
 - belongs_to :item
 
-## evaluationテーブル
+## ratingsテーブル
 |Column|Type|Options|
 |------|----|-------|
 
