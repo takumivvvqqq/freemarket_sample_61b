@@ -19,7 +19,7 @@
 
 ### Association
 - belongs_to :area
-- has_many :item
+- has_many :items
 - has_many :comments
 - has_many :likes
 
