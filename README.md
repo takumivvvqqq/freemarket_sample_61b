@@ -36,10 +36,13 @@
 ## ratingsテーブル
 |Column|Type|Options|
 |------|----|-------|
+|buyer_id|references|foreign_key: true|
+|seller_id|references|foreign_key: true|
+|rate|string|null: false, default: "good"|
 
 ### Association
--
--
+- belongs_to :buyer, class_name: 'User', :foreign_key => 'buyer_id'
+- belongs_to :seller, class_name: 'User', :foreign_key => 'seller_id'
 
 ## itemsテーブル
 |Column|Type|Options|
