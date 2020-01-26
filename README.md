@@ -26,8 +26,8 @@
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|foreign_key: true|
-|item_id|references|foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -36,8 +36,8 @@
 ## ratingsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|buyer_id|references|foreign_key: true|
-|seller_id|references|foreign_key: true|
+|buyer_id|references|null: false, foreign_key: true|
+|seller_id|references|null: false, foreign_key: true|
 |rate|string|null: false, default: "good"|
 
 ### Association
@@ -52,9 +52,10 @@
 |postage|boolean|null: false|
 |description|text|null: false|
 |area_id|references|null: false, foreign_key: true|
-|user_id|references|null: false, foreign_key: true|
-|brand_id|references|foreign_key: true|
-|size_id|references|foreign_key: true|
+|seller_id|references|null: false, foreign_key: true|
+|buyer_id|references|foreign_key: true|
+|brand_id|references|null: false, foreign_key: true|
+|size_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :area
@@ -71,7 +72,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |size|string|null: false|
-|category_id|references|foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :category
@@ -81,7 +82,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image_url|string||
-|item_id|references|foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -90,8 +91,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
-|user_id|references|foreign_key: true|
-|item_id|references|foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -125,8 +126,8 @@
 ## brand_categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|brand_id|references|foreign_key: true|
-|category_id|references|foreign_key: true|
+|brand_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :brand
@@ -135,8 +136,8 @@
 ## item_categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|foreign_key: true|
-|category_id|references|foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
