@@ -59,7 +59,8 @@
 
 ### Association
 - belongs_to :area
-- belongs_to :user
+- belongs_to :seller, class_name: "User"
+- belongs_to :buyer, class_name: "User"
 - belongs_to :brand
 - belongs_to :size
 - has_many :comments, dependent: :destroy
