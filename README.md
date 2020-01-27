@@ -18,8 +18,12 @@
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |image|string||
+|zip_code|string|null: false, unique: true|
 |area_id|references|null: false, foreign_key: true|
-|address|string|null: false|
+|city|string|null: false|
+|address1|string|null: false, unique: true|
+|address2|string|null: false|
+|phone_number|strring|null: false, unique: true|
 
 ### Association
 - belongs_to :area
