@@ -1,4 +1,4 @@
-## areasテーブル
+## prefecturesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
@@ -19,14 +19,14 @@
 |password|string|null: false|
 |image|string||
 |zip_code|string|null: false, unique: true|
-|area_id|references|null: false, foreign_key: true|
+|prefecture_id|references|null: false, foreign_key: true|
 |city|string|null: false|
 |address1|string|null: false, unique: true|
-|address2|string|null: false|
-|phone_number|strring|null: false, unique: true|
+|address2|string||
+|phone_number|strring|unique: true|
 
 ### Association
-- belongs_to :area
+- belongs_to :prefecture
 - has_many :items, dependent: :destroy
 - has_many :comments, dependent: :destroy
 - has_many :likes, dependent: :destroy
@@ -59,14 +59,14 @@
 |price|integer|null: false|
 |postage|boolean|null: false|
 |description|text|null: false|
-|area_id|references|null: false, foreign_key: true|
+|prefecture_id|references|null: false, foreign_key: true|
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id|references|foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
 |size_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :area
+- belongs_to :prefecture
 - belongs_to :seller, class_name: "User"
 - belongs_to :buyer, class_name: "User"
 - belongs_to :brand
