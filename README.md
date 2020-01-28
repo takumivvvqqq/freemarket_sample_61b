@@ -27,7 +27,8 @@
 
 ### Association
 - belongs_to :prefecture
-- has_many :items, dependent: :destroy
+- has_many :sell_items, class_name: 'Item', :foreign_key => 'sell_id'
+- has_many :buy_items, class_name: 'Item', dependent: :destroy, :foreign_key => 'buyer_id'
 - has_many :comments, dependent: :destroy
 - has_many :likes, dependent: :destroy
 
