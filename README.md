@@ -4,7 +4,7 @@
 |name|string|null: false, unique: true|
 
 ### Association
-- has_many :users
+- has_many :address
 - has_many :items
 
 ## usersテーブル
@@ -18,19 +18,28 @@
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |image|string||
+|phone_number|strring|unique: true|
+
+### Association
+- has_one :address
+- has_many :sell_items, class_name: 'Item', :foreign_key => 'sell_id'
+- has_many :buy_items, class_name: 'Item', dependent: :destroy, :foreign_key => 'buyer_id'
+- has_many :comments, dependent: :destroy
+- has_many :likes, dependent: :destroy
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
 |zip_code|string|null: false, unique: true|
 |prefecture_id|references|null: false, foreign_key: true|
 |city|string|null: false|
 |address1|string|null: false, unique: true|
 |address2|string||
-|phone_number|strring|unique: true|
+|user_id|references|null: false|
 
 ### Association
+- belongs_to :user
 - belongs_to :prefecture
-- has_many :sell_items, class_name: 'Item', :foreign_key => 'sell_id'
-- has_many :buy_items, class_name: 'Item', dependent: :destroy, :foreign_key => 'buyer_id'
-- has_many :comments, dependent: :destroy
-- has_many :likes, dependent: :destroy
 
 ## likesテーブル
 |Column|Type|Options|
