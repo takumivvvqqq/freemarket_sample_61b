@@ -17,8 +17,9 @@
 |last_name_kana|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|image|string||
-|phone_number|strring|unique: true|
+|year|integer|null: false|
+|month|integer|null: false|
+|day|integer|null: false|
 
 ### Association
 - has_one :address
