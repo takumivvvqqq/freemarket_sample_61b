@@ -26,8 +26,8 @@
 |zip_code|string|null: false, unique: true|
 |prefecture_id|references|null: false, foreign_key: true|
 |city|string|null: false|
-|address1|string|null: false, unique: true|
-|address2|string||
+|street_name|string|null: false, unique: true|
+|building_name|string||
 |user_id|references|null: false|
 
 ### Association
@@ -84,10 +84,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |size|string|null: false|
-|category_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :category
 - has_many :items
 
 ## imagesテーブル
