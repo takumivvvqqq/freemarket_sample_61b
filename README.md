@@ -20,7 +20,7 @@
 - has_many :comments, dependent: :destroy
 - has_many :likes, dependent: :destroy
 
-## addressテーブル
+## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |zip_code|string|null: false, unique: true|
