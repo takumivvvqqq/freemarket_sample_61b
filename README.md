@@ -20,6 +20,7 @@
 |year|integer|null: false|
 |month|integer|null: false|
 |day|integer|null: false|
+|introduction|text||
 
 ### Association
 - has_one :address
