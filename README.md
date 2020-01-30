@@ -1,12 +1,3 @@
-## prefecturesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, unique: true|
-
-### Association
-- has_many :address
-- has_many :items
-
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -41,7 +32,7 @@
 
 ### Association
 - belongs_to :user
-- belongs_to :prefecture
+- belongs_to_active_hash :prefecture
 
 ## likesテーブル
 |Column|Type|Options|
@@ -78,7 +69,7 @@
 |size_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :prefecture
+- belongs_to_active_hash :prefecture
 - belongs_to :seller, class_name: "User"
 - belongs_to :buyer, class_name: "User"
 - belongs_to :brand
